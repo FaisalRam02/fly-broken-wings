@@ -11,7 +11,7 @@
         body {
             font-family: "Times New Roman", Times, serif;
             font-size: 14px;
-            margin: 0; /* Menghilangkan margin default */
+            margin: 0;
             padding: 0;
             color: #000000;
         }
@@ -45,7 +45,7 @@
         .header img {
             width: 700px;
             height: auto;
-            margin-top: 5px; /* Mengurangi jarak antara teks dan gambar */
+            margin-top: 5px;
         }
 
         .title {
@@ -94,11 +94,11 @@
 <body>
     <div class="header">
         <div class="ler">
-            <p style="font-family: Arial, sans-serif; font-size: 16px ; ">PEMERINTAH KABUPATEN GARUT</p>
-            <p style="font-family: Arial, sans-serif; font-size: 16px ; ">KECAMATAN TAROGONG KIDUL</p>
-            <p style="font-family: Arial, sans-serif; font-size: 18px ; font-weight: bold;">KELURAHAN PAKUWON</p>
+            <p style="font-family: Arial, sans-serif; font-size: 22px ; ">PEMERINTAH KABUPATEN GARUT</p>
+            <p style="font-family: Arial, sans-serif; font-size: 20px ; ">KECAMATAN TAROGONG KIDUL</p>
+            <p style="font-family: Arial, sans-serif; font-size: 18px ; font-weight: bold;">DESA KEMATIAN</p>
             <div class="nigga">
-            <p style="font-family: Arial, sans-serif; font-size: 10px ; ">Jalan Mawar No.12 Kode Pos 44117</p>
+            <p style="font-family: Arial, sans-serif; font-size: 10px ; ">Jalan Perenungan No. 888 Kode Pos 10001</p>
             </div>
         </div>
         <img src="{{ public_path('storage/kop.png') }}" alt="Logo">
@@ -111,7 +111,7 @@
     </div>
 
     <div class="content">
-        <p>Yang bertanda tangan di bawah ini Kepala Kelurahan Pakuwon Kecamatan Tarogong Kidul Kabupaten Garut, dengan ini menerangkan bahwa:</p>
+        <p>Yang bertanda tangan di bawah ini Kepala Desa Kematian Kecamatan Pemikiran Kabupaten Perwujudan, dengan ini menerangkan bahwa:</p>
         <table>
             <tr>
                 <td class="label">Nama</td>
@@ -122,7 +122,7 @@
                 <td>: {{ $penduduk->jenis_kelamin }}</td>
             </tr>
             <tr>
-                <td class="label">Tempat/Tanggal Lahir</td>
+                <td class="label">Tempat/Tanggal Meninggal</td>
                 <td>: {{ $penduduk->tempat_lahir }}, {{ \Carbon\Carbon::parse($penduduk->tanggal_lahir)->format('d F Y') }}</td>
             </tr>
             <tr>
@@ -135,25 +135,25 @@
             </tr>
             <tr>
                 <td class="label">Pekerjaan</td>
-                <td>: {{ $penduduk->pekerjaan->nama }}</td>
+                <td>: {{ $penduduk->pekerjaan->nama_pekerjaan }}</td>
             </tr>
             <tr>
                 <td class="label">Alamat</td>
                 <td>: {{ $penduduk->alamat_spesifik }}</td>
             </tr>
         </table>
-        <p>Adalah benar Penduduk Kelurahan Pakuwon Kecamatan Tarogong Kidul Kabupaten Garut, dan benar Orang tersebut diatas sampai saat ini berkelakuan baik serta tidak pernah atau sedang berurusan dengan pihak berwajib.</p>
+        <p>Adalah benar Penduduk Desa Kematian Kecamatan Pemikiran Kabupaten Perwujudan, dan benar orang diatas tersebut telah mati dan kami selayaknya keluarga almarhum/almarhumah ingin membuat Akta Kematian.</p>
         <p>Demikian surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
     </div>
 
 
     <div class="signature">
         <p>Garut, {{ now()->format('d F Y') }}</p>
-        <p>Kepala Kelurahan Pakuwon,</p>
+        <p>Kepala Desa Kematian,</p>
         <br><br><br>
-        <p><strong>AGUS KUSNADI, SE.</strong></p>
+        <p><strong>Faisal, SK.</strong></p>
         <hr style="width: 138px; border: 1px solid black; margin-right: 0;">
-        <p>NIP. 19780828 201001 1 019</p>
+        <p>NIP. 089 KAPAN KAPAN</p>
     </div>
 </body>
 </html>

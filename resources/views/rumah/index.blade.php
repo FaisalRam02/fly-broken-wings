@@ -51,7 +51,7 @@
         }
         .navbar-nav .nav-link {
             color: white !important; 
-            transition: color 0.5s ease;
+            transition: color 0.2s ease;
         }
         .navbar.scrolled .nav-link {
             color: black !important;
@@ -201,9 +201,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#layanan">Layanan</a>
                 </li>
                 <li class="nav-item">
@@ -226,94 +223,124 @@
     </section>
 
     <!-- Layanan Section -->
-    <section id="layanan" class="bg-dark-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="ot-heading">
-                    <span class="text-primary-light">Layanan</span>
-                </div>
-                <div class="space-20"></div>
+<!-- Layanan Section -->
+<section id="layanan" class="bg-dark-primary">
+        <div class="container">
+            <div class="text-center mb-4 mt-5">
+                <h2 class="section-heading text-uppercase text-white">Layanan</h2>
             </div>
-        </div>
-        <div class="row">
-            <?php
-            $i = 0;
-            foreach ($documents as $b) :
-                $i++;
-                $a = str_pad($i, 2, '0', STR_PAD_LEFT);
-                $surats = $b['nama_surat'];
-            ?>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-5">
-                    <div class="serv-box-2 s2">
-                        <span class="big-number"><?= $a; ?></span>
-                        <div class="icon-main"><span class="flaticon-tablet"></span></div>
-                        <div class="content-box">
-                            <h5><?= $b['nama_surat']; ?></h5>
-                            <div>Jika anda ingin membuat <?= $surats ?> klik tombol di bawah!</div>
-                            <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#createSuratModal">
-                                Buat Surat
-                            </button>
+            <div class="row">
+                <?php
+                $i = 0;
+                foreach ($documents as $b) :
+                    $i++;
+                    $a = str_pad($i, 2, '0', STR_PAD_LEFT);
+                    $surats = $b['nama_surat'];
+                ?>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="serv-box-2 s2">
+                            <span class="big-number"><?= $a; ?></span>
+                            <div class="icon-main"><span class="flaticon-tablet"></span></div>
+                            <div class="content-box">
+                                <h5><?= $b['nama_surat']; ?></h5>
+                                <div>Jika anda ingin membuat <?= $surats ?> klik tombol di bawah!</div>
+                                <button type="button" class="btn btn-info mt-3" data-toggle="modal" data-target="#createSuratModal">
+                                    Buat Surat
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- Modal untuk Membuat Surat -->
-<div class="modal fade" id="createSuratModal" tabindex="-1" aria-labelledby="createSuratModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createSuratModalLabel">Buat Surat Baru</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <?php endforeach; ?>
             </div>
-            <div class="modal-body">
-                <form action="{{ route('surat.store') }}" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label for="documents_id">Nama Surat</label>
-                        <select name="documents_id" class="form-control" required>
-                            <option value="">Pilih Surat</option>
-                            @foreach($documents as $document)
-                                <option value="{{ $document->id }}">{{ $document->nama_surat }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nama_pengaju">Nama Pengaju</label>
-                        <input type="text" class="form-control" name="nama_pengaju" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nik">NIK</label>
-                        <input type="text" class="form-control" name="nik" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tanggal_diterima">Tanggal Dikirim</label>
-                        <input type="date" class="form-control" name="tanggal_diterima" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!-- Layanan Section -->
-    <section id="pengecekan" class="bg-secondary text-light text-center">
-        <div class="container">
-            <h1>pengecekan</h1>
         </div>
     </section>
+    
+    <!-- Modal untuk Membuat Surat -->
+    <div class="modal fade" id="createSuratModal" tabindex="-1" aria-labelledby="createSuratModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createSuratModalLabel">Buat Surat Baru</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('surat.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="documents_id">Nama Surat</label>
+                            <select name="documents_id" class="form-control" required>
+                                <option value="">Pilih Surat</option>
+                                @foreach($documents as $document)
+                                    <option value="{{ $document->id }}">{{ $document->nama_surat }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_pengaju">Nama Pengaju</label>
+                            <input type="text" class="form-control" name="nama_pengaju" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nik">NIK</label>
+                            <input type="text" class="form-control" name="nik" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal_diterima">Tanggal Dikirim</label>
+                            <input type="date" class="form-control" name="tanggal_diterima" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Pengecekan Section -->
+    <section id="pengecekan" style="background-color: #222; padding: 50px 0;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-heading text-uppercase text-white">Pengecekan</h2>
+            </div>
+            <div class="card bg-dark text-white border-0">
+                <div class="card-body">
+                    <form class="form-inline d-flex justify-content-end mb-3" method="GET" action="{{ route('rumah.index') }}">
+                        <!-- Add any filters or search inputs here if needed -->
+                    </form>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover text-white" id="example" width="100%" cellspacing="0">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Surat Yang Di Ajukan</th>
+                                    <th scope="col">Pengaju</th>
+                                    <th scope="col">Tanggal Pengajuan</th>
+                                    <th scope="col">Persetujuan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1; ?>
+                                @foreach ($surat as $s)
+                                    <tr>
+                                        <th scope="row">{{ $i }}</th>
+                                        <td>{{ $s->document['nama_surat'] }}</td>
+                                        <td>{{ $s['nama_pengaju'] }}</td>
+                                        <td>{{ $s['tanggal_diterima'] }}</td>
+                                        <td>{{ $s['status'] }}</td> <!-- Add status if needed -->
+                                    </tr>
+                                    <?php $i++; ?>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section id="about" class="bg-secondary text-white text-center">
         <div class="container">
@@ -351,10 +378,26 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            AOS.init({
+                duration: 1000,
+            });
+        });
+    </script>
 </body>
 </html>

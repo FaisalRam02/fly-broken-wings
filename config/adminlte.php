@@ -368,7 +368,7 @@ return [
                 [
                     'text' => 'Kategori',
                     'route' => 'kategori.index',
-                    'icon' => 'far fa-fw fa-folder'
+                    'icon' => 'fas fa-fw fa-file'
                 ],
             ],
         ],

@@ -175,3 +175,77 @@
     </div>
 </div>
 @endsection
+
+@section('css')
+<style>
+    /* Tambahkan styling custom di sini */
+    .modal .modal-header {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .modal .modal-title {
+        font-weight: bold;
+    }
+
+    .modal .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .modal .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .table thead th {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table tbody td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table .btn {
+        margin: 0 2px;
+    }
+
+    .alert-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .alert-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #545b62;
+        border-color: #454d55;
+    }
+</style>
+@endsection
+
+@section('content')
+<!-- Konten HTML kamu di sini -->
+@endsection
