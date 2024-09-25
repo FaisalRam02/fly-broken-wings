@@ -1,7 +1,7 @@
 ## Fitur Yang Tersedia
 - Auth
-  - login
-  - register
+  - Register
+  - Login
 - Homepage
   - Pengajuan
   - Pengecekan
@@ -16,14 +16,15 @@
   - Kategori Document
 ## ERD 
 ![alt text](https://raw.githubusercontent.com/FaisalRam02/fly-broken-wings/refs/heads/main/ERD.jpeg)
-Tabel Failed_Jobs, Personal_access_tokens, Password_reset_tokens, migrations diabaikan saja karena itu bawaan dari Laravel.
+
+Tabel Failed_Jobs, Personal_access_tokens, Password_resets, migrations diabaikan saja karena itu bawaan dari Laravel.
 
 ## UML
 ![alt text](https://raw.githubusercontent.com/FaisalRam02/fly-broken-wings/refs/heads/main/UML.png)
 
 ## Teknologi Yang Digunakan
-- [Laravel 9]([https://pages.github.com/](https://laravel.com/docs/9.x/releases))
-- Bootstrap 5
+- [Laravel 9](https://laravel.com/docs/9.x/releases)
+- [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Persyaratan Untuk Melakukan Instalasi
 - PHP 8.2.12 & Web Server (Apache)
@@ -55,4 +56,4 @@ php artisan migrate
 ```
 php artisan serve
 ```
-UKK persuratan dibuat oleh Misr
+**UKK persuratan dibuat oleh [Misr](https://www.instagram.com/fruit.sal.ad/) aka [Sal](https://web.facebook.com/faram8)**
