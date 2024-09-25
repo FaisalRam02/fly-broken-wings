@@ -34,7 +34,7 @@ Tabel Failed_Jobs, Personal_access_tokens, Password_resets, migrations diabaikan
 ## Instalasi 
 1 . Clone Repository, install/update composer dan install node js
 ```
-[git clone https://github.com/FajrilMaulid/ukk-perpus.git](https://github.com/FaisalRam02/fly-broken-wings)
+git clone https://github.com/FajrilMaulid/ukk-perpus.git](https://github.com/FaisalRam02/fly-broken-wings)
 npm install ; npm run dev
 composer install
 cp .env.example .env
