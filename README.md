@@ -1,6 +1,6 @@
 ## Tools Yang Digunakan
-[Visual Studio Code](https://code.visualstudio.com/)
-[XAMPP](https://www.apachefriends.org/download.html)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [XAMPP](https://www.apachefriends.org/download.html)
 
 ## Fitur Yang Tersedia
 - Auth
