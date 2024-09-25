@@ -22,7 +22,7 @@ Tabel Failed_Jobs, Personal_access_tokens, Password_reset_tokens, migrations dia
 ![alt text](https://raw.githubusercontent.com/FaisalRam02/fly-broken-wings/refs/heads/main/UML.png)
 
 ## Teknologi Yang Digunakan
-- Laravel 9
+- [Laravel 9]([https://pages.github.com/](https://laravel.com/docs/9.x/releases))
 - Bootstrap 5
 
 ## Persyaratan Untuk Melakukan Instalasi
@@ -31,7 +31,28 @@ Tabel Failed_Jobs, Personal_access_tokens, Password_reset_tokens, migrations dia
 - Web Browser (Chrome)
 
 ## Instalasi 
-1 . Clone Repository
+1 . Clone Repository, install/update composer dan install node js
 ```
+[git clone https://github.com/FajrilMaulid/ukk-perpus.git](https://github.com/FaisalRam02/fly-broken-wings)
+npm install ; npm run dev
 composer install
+cp .env.example .env
 ```
+2. Konfigurasi Database pada file .env
+```
+APP_DEBUG=true
+DB_DATABASE=cooker
+DB_USERNAME=root
+DB_PASSWORD=
+```
+3. Melakukan Migrasi (opsional) dan menyambungkan storage
+```
+php artisan key:generate
+php artisan storage:link
+php artisan migrate
+```
+4. Mulai Situs Web
+```
+php artisan serve
+```
+UKK persuratan dibuat oleh Misr
