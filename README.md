@@ -9,7 +9,7 @@
 - Homepage
   - Pengajuan
   - Pengecekan
-- Management User
+- User Management
   - User
 - Penduduk Management
   - Data Penduduk
@@ -18,6 +18,7 @@
   - Surat
   - Document
   - Kategori Document
+
 ## ERD 
 ![alt text](https://raw.githubusercontent.com/FaisalRam02/fly-broken-wings/refs/heads/main/ERD.jpeg)
 
@@ -37,29 +38,49 @@ Tabel Failed_Jobs, Personal_access_tokens, Password_resets, migrations diabaikan
 - Database (MariaDB)
 - Web Browser (Chrome)
 
-## Instalasi 
-1 . Clone Repository, install/update composer dan install node js
+## Instalasi
+
+Simpan Kop ini di public/storage
+
+![alt text](https://github.com/FaisalRam02/fly-broken-wings/blob/main/kop.png?raw=true)
+
+1. Clone Repository
 ```
 git clone https://github.com/FaisalRam02/fly-broken-wings
-npm install ; npm run dev
-composer install
+```
+2. Salin file env.
+```
 cp .env.example .env
 ```
-2. Konfigurasi Database pada file .env
+3. Install atau Update composer
+```
+composer install
+```
+4. Install dan Jalankan NPM
+```
+npm install ; npm run dev
+```
+5. Konfigurasi Database pada file .env
 ```
 APP_DEBUG=true
 DB_DATABASE=cooker
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-3. Melakukan Migrasi (opsional) dan menyambungkan storage
+6. Buat kunci
 ```
 php artisan key:generate
-php artisan storage:link
+```
+7. Lakukan Migrasi (opsional)
+```
 php artisan migrate
 ```
-4. Mulai Situs Web
+8. Sambungkan Storage
+```
+php artisan storage:link
+```
+9. Mulai Situs Web
 ```
 php artisan serve
 ```
-**UKK persuratan dibuat oleh [Misr](https://www.instagram.com/fruit.sal.ad/) aka [Sal](https://www.facebook.com/share/CagCeNVAFarTNHPF/?mibextid=qi2Omg)**
+**UKK persuratan dibuat oleh [Misr](https://www.instagram.com/fruit.sal.ad/)**
